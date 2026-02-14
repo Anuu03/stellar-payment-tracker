@@ -4,7 +4,7 @@ A modern, responsive payment tracking dApp built on the Stellar blockchain with 
 
 ## 🚀 Live Demo
 
-**Deployed Application:** _[Link will be added here]_
+**Deployed Application:**(https://stellar-payment-tracker.vercel.app/)
 
 ---
 
