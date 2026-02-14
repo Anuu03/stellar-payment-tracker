@@ -23,7 +23,7 @@ A modern, responsive payment tracking dApp built on the Stellar blockchain with 
 
 The application supports three major Stellar wallet providers:
 
-![Multi-Wallet Integration](./wallet-integration.png)
+![Multi-Wallet Integration](./screenshots/wallet-integration.png)
 
 **Available Wallets:**
 - 🦅 **Freighter** - Browser extension wallet
