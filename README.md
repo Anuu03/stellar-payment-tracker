@@ -132,7 +132,7 @@ export const CONFIG = {
 ![Transactions](./screenshots/transactions.png)
 
 ### Multi-Wallet Selector
-![Wallet Options](./wallet-integration.png)
+![Wallet Options](./screenshots/wallet-integration.png)
 
 ---
 
