@@ -1,0 +1,94 @@
+.payment-form {
+    padding: 0;
+}
+
+.form-title {
+    font-size: var(--text-xl-responsive);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-6);
+    color: var(--text-primary);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-5);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-2);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+    font-size: var(--text-sm);
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 44px;
+}
+
+.error-message {
+    margin-top: var(--spacing-2);
+    color: var(--accent-error);
+    font-size: var(--text-xs);
+}
+
+/* Submit button */
+.form-group .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+}
+
+/* Spinner animation for loading states */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+/* Enhanced button disabled state */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    background: var(--brand-primary);
+}
+
+/* ===== RESPONSIVE BEHAVIOR ===== */
+
+/* Mobile (< 768px) - Larger touch targets */
+@media (max-width: 767px) {
+    .form-title {
+        margin-bottom: var(--spacing-4);
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-4);
+    }
+
+    .form-group label {
+        font-size: var(--text-sm);
+    }
+
+    .form-group input {
+        min-height: 48px;
+        font-size: var(--text-base);
+        padding: var(--spacing-4);
+    }
+
+    .form-group .btn {
+        min-height: 56px;
+        font-size: var(--text-base);
+    }
+}

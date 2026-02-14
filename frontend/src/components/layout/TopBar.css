@@ -1,0 +1,198 @@
+.topbar {
+    height: 64px;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-default);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-8);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+/* Left Section */
+.topbar-left {
+    display: flex;
+    gap: var(--spacing-6);
+    align-items: center;
+}
+
+/* Hamburger Menu Button - Mobile Only */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 44px;
+    padding: var(--spacing-3);
+    background: transparent;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.hamburger-btn:hover {
+    background: var(--bg-elevated);
+    border-color: var(--border-strong);
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+.network-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
+    background: var(--bg-input);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+}
+
+.network-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-success);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.network-label {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.balance-display {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.balance-label {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.balance-value {
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-mono);
+}
+
+/* Right Section */
+.topbar-right {
+    display: flex;
+    gap: var(--spacing-4);
+    align-items: center;
+}
+
+.new-payment-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    min-height: 40px;
+}
+
+.new-payment-btn span:first-child {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+}
+
+.user-address {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
+    background: var(--bg-input);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+}
+
+.address-icon {
+    font-size: var(--text-base);
+}
+
+.address-text {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+    font-family: var(--font-mono);
+}
+
+/* ===== RESPONSIVE BEHAVIOR ===== */
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+    .topbar {
+        padding: 0 var(--spacing-4);
+        height: 56px;
+    }
+
+    .topbar-left,
+    .topbar-right {
+        gap: var(--spacing-2);
+    }
+
+    /* Show hamburger menu on mobile */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Hide balance display on mobile */
+    .balance-display {
+        display: none;
+    }
+
+    /* Make "New Payment" button more compact */
+    .new-payment-btn {
+        min-width: 44px;
+        min-height: 44px;
+        padding: var(--spacing-2);
+    }
+
+    /* Truncate user address more aggressively */
+    .user-address {
+        padding: var(--spacing-2);
+    }
+
+    .address-text {
+        font-size: var(--text-xs);
+    }
+}
+
+/* Tablet (768px - 1279px) */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .topbar {
+        padding: 0 var(--spacing-6);
+    }
+
+    .topbar-left,
+    .topbar-right {
+        gap: var(--spacing-4);
+    }
+}

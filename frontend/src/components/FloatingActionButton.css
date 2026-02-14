@@ -1,0 +1,51 @@
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        0 2px 6px rgba(59, 130, 246, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-fab);
+    transition: all var(--transition-fast);
+}
+
+.fab:hover {
+    background: var(--brand-primary-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4),
+        0 3px 8px rgba(59, 130, 246, 0.5);
+}
+
+.fab:active {
+    transform: scale(0.95);
+}
+
+.fab-icon {
+    font-size: 28px;
+    font-weight: var(--font-bold);
+    line-height: 1;
+}
+
+/* Ensure FAB only shows on mobile */
+@media (min-width: 768px) {
+    .fab {
+        display: none;
+    }
+}
+
+/* Add safe area insets for modern mobile devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .fab {
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        right: calc(20px + env(safe-area-inset-right));
+    }
+}

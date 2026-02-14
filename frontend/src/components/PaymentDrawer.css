@@ -1,0 +1,129 @@
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: var(--z-modal-backdrop);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.payment-drawer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 480px;
+    max-width: 100%;
+    background: var(--bg-surface);
+    border-left: 1px solid var(--border-default);
+    transform: translateX(100%);
+    transition: transform var(--transition-drawer);
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.payment-drawer.open {
+    transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-6);
+    border-bottom: 1px solid var(--border-default);
+    min-height: 64px;
+}
+
+.drawer-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+.close-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: var(--text-2xl);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+/* Drawer Content */
+.drawer-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-6);
+}
+
+.drawer-content .payment-form {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* ===== RESPONSIVE BEHAVIOR ===== */
+
+/* Mobile (< 768px) - Full-Screen Modal */
+@media (max-width: 767px) {
+    .payment-drawer {
+        width: 100vw;
+        height: 100vh;
+        border-left: none;
+        border-radius: 0;
+        transform: translateY(100%);
+        right: 0;
+        bottom: 0;
+        top: auto;
+    }
+
+    .payment-drawer.open {
+        transform: translateY(0);
+    }
+
+    .drawer-header {
+        padding: var(--spacing-4);
+        min-height: 56px;
+    }
+
+    .drawer-title {
+        font-size: var(--text-lg);
+    }
+
+    .close-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .drawer-content {
+        padding: var(--spacing-4);
+    }
+}
