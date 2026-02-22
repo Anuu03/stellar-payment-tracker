@@ -18,9 +18,9 @@ const getSorobanServer = () => {
     return sorobanServerInstance;
 };
 
-/**
- * Get total number of payments
- */
+
+ // Get total number of payments
+
 export async function getTotalPayments(walletAddress) {
     try {
         // Fetch account

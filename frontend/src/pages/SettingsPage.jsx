@@ -13,8 +13,6 @@ export default function SettingsPage({ onDisconnect, onReconnect }) {
                 // Call wallet context disconnect (sets the flag)
                 await disconnectWallet();
 
-                // DON'T clear localStorage - it contains the disconnect flag!
-                // localStorage.clear(); // REMOVED - would wipe out disconnect flag
 
                 // Call parent handler to navigate to home
                 if (onDisconnect) {
